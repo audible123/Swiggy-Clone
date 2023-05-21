@@ -1,0 +1,111 @@
+//notes 
+
+// ....... lecture 3
+
+// -D means dev dependency --savedev and -D are same
+
+// we want react not in our development evironment but in the global environment
+
+// npx parcel entry point file 
+
+
+// ....... lecture 4
+
+// tree shaking is removing unwanted code. library example
+
+// easy to configure in parcel. large scale indusry level projects webpack is used.
+
+// create react app -> webpack along with babel
+
+// npx build parcel entry file name -> every time writing code is not feasible so we build a script in our packsge.json
+
+// "scripts": {
+//     "start": "parcel index.html",
+//     "test": "jest"
+//   } after writing the script we can simply run -> npx run start 
+
+// npm is used when you want to install your modules and npx is used when you have to execute your modules
+
+// npm == npx run (not sure)
+
+// npm run start == npm start
+
+// console log are not directly remove by parcel you have to configure
+// the packages code will be come inside the node modules
+// configure -> 
+// babel.rc is a configeration for babel
+
+// key helps the react to perform very less work when you update or add any element in the html code refer documentation react tracks the uniqueness using keys.
+
+// render means updating something on the DOM 
+// rendering a container means that loading html into the browser(updating the virtual DOM )
+
+// JSX uses createelement behind the scenes with the help of babel .
+// the JSX gets converted into using babel  -> react create element -> object -> html(dom)
+
+// JSX -> Is Html inside Js ? -> JSX is a html like syntax  // difference btw html and Jsx
+// multiple line  use this {}
+// tab index? in Jsx {camecase convention in naming class and ids}
+// className to give a class to a tag //
+
+// angular bracket -> Jsx ?? In JSX, angle brackets are used to define elements. For example, <div>, <p>, <table> are all elements defined using angle brackets  {Babel -> github repo AST}                
+
+
+// always readible code strictly follow this babel how insatll ? 
+
+// 2 package.lock.json why ???? 
+
+// good practice to use functional component in capital letter i.e. camel case . it is function returning JSX in angular bracket.
+
+// both are same 
+
+// const head =()=> {
+//     return (
+//       <div>
+//           <h1>Namaste React functional component </h1>
+//           <h2>This si a h2 tags</h2>
+//       </div>
+//     );
+//   };
+
+// const head2 =()=> 
+//     (
+//       <div>
+//           <h1>Namaste React functional component </h1>
+//           <h2>This si a h2 tags</h2>
+//       </div>
+//     );
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+// normal variable in react 0
+const heading = (
+  <h1 id="title" key=" h2">
+    Namaste React
+  </h1>
+); 
+
+// this is a component 
+const Title = ()=> (
+  <h1 id="title" key=" h2">
+    Namaste React
+  </h1>
+);
+
+// when we pass variable \
+
+const HeaderComponent = ()=>{
+  return (
+    <div>
+      {/* also expression
+       */}
+      {heading}
+      <h2>Lorem, ipsum dolor.</h2>
+      <h2>bdhjdedkg</h2>
+    </div>
+  );
+};
+
+// when we use compone {Title()} and <title/>
+
