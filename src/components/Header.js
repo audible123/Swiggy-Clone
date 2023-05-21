@@ -18,13 +18,14 @@ const FoodieTitle =()=>{
         <Link style={{textDecoration: 'none',color:"white",margin:"10px"}} to="/about"><li>About</li></Link>
         <Link style={{textDecoration: 'none' ,color:"white",margin:"10px"}} to="/contact"><li>Contact</li></Link>
         <Link style={{textDecoration: 'none',color:"white",margin:"10px"}} to="/cart"><li>Cart</li></Link>
+        <Link style={{textDecoration: 'none',color:"white",margin:"10px"}} to="/instamart"><li>Instamart</li></Link>
       </ul>
       <div className='login-btn'>
       {
        isLoggedIn ? (
-        <button onClick={()=>setIsLoggedLn(false)}>Logout</button>
+        <button className='login-btn' onClick={()=>setIsLoggedLn(false)}>Logout</button>
       ):(
-        <button onClick={()=>setIsLoggedLn(true)}>Login</button>
+        <button className='login-btn' onClick={()=>setIsLoggedLn(true)}>Login</button>
       )
      }
       </div>

@@ -148,6 +148,32 @@
     list-style: none;
 }
 
+.login-btn > button{
+    color: #fdfeff;
+  text-decoration: none;
+  background-color: #06182a;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin: 10px;
+    font-size: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-weight:bolder;
+}
+
+.restaurant-data{
+    display: flex;
+    justify-content: space-evenly;
+    height: 70vh;
+    flex-wrap: wrap;
+}
+
+.api-data > img{
+    width: 300px;
+    height: 275px;
+
+}
+
 
 
 @media screen and (max-width: 1024px){

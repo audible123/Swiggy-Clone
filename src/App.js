@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy ,Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import FoodFooter from './components/Footer';
 import FoodBody from './components/Body';
@@ -8,9 +8,13 @@ import { createBrowserRouter , RouterProvider,Outlet } from 'react-router-dom';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
-
+import Shimmer from './components/shimmer';
+// import Instamart from './components/Instamart'; this is normal import
 
 //Config Driven UI
+
+// on demand import 
+const Instamart = lazy(()=>import("./components/Instamart"));
 
 
 const FoodAppLayout =()=>{
@@ -45,6 +49,10 @@ const appRouter = createBrowserRouter([
         path:"/restaurant/:restaurantId",
         element:<RestaurantMenu/>,
       },
+      {
+        path:"/instamart",
+        element:<Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
+      }
     ],
   },
 
