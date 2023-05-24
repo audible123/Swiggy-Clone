@@ -34,8 +34,8 @@ const FoodBody=()=>{
   },[])
   
   if(!allRestaurant) return (
-    <div className="null-restaurant" style={{height:"40vh"}}>
-      <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/connection_error_bsppck" alt="Error" />
+    <div className="null-restaurant flex flex-col justify-center items-center h-[70vh]" >
+      <img className="h-52 w-60" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/connection_error_bsppck" alt="Error" />
       <h1>Oh ! All the restaurants are currently unserviceable</h1>
       <h3>All restaurant are unserviceable,check back in some time.</h3>
     </div>
@@ -51,20 +51,20 @@ const FoodBody=()=>{
   //  .length lagana tha  
   return allRestaurant.length ===0 ?(<Shimmer/>):(
     <>
-    <div className="search-container">
-      <input type="text" placeholder="Search" value={searchText} onChange={
+    <div className=" flex text-center p-5 my-5 justify-center items-center">
+      <input className="w-[430px] shadow-xl p-1" type="text" placeholder="Search" value={searchText} onChange={
         (e)=>{
           setSearchText(e.target.value);
         }} />
-        <button className="all-btn"
+        <button className="bg-gradient-to-r from-blue-900 to-black text-white p-[5px] box-border rounded-r-[25px]"
         onClick={()=>{
           const data= fiterData(searchText,allRestaurant);
           setFilteredRestaurant(data);
         }}
-        >Submit</button>
+        >Go</button>
       </div>
       
-    <div className="restaurant-list">{
+    <div className="flex my-14 mx-4 flex-wrap">{
     filteredRestaurant.map((restaurant) => {
     return (<Link 
       style={{textDecoration: 'none',color:"black",margin:"10px"}}
