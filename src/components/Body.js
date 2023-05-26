@@ -2,6 +2,7 @@ import RestrauntCard from "./RestaurantCard";
 import { useState ,useEffect} from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 
 //filter lagana tha bsdk rate ho to lowercase mei ( ) hoga
@@ -19,19 +20,24 @@ const FoodBody=()=>{
   const [allRestaurant,setAllRestaurant]=useState();
   const [filteredRestaurant,setFilteredRestaurant]=useState();
   
-  // https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.9202266&lng=81.1795848&page_type=DESKTOP_WEB_LISTING
-
-
+  useEffect(()=>{
+    //API call
+    getRestaurant();
+  },[])
+  
   async function getRestaurant(){
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.9202266&lng=81.1795848&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
   }
-  useEffect(()=>{
-    //API call
-    getRestaurant();
-  },[])
+
+  const isOnline = useOnline();
+  if(!isOnline){
+    return <h2>Check your connections and retry</h2>;   
+  }
+
+ 
   
   if(!allRestaurant) return (
     <div className="null-restaurant flex flex-col justify-center items-center h-[70vh]" >
