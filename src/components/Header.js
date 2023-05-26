@@ -5,7 +5,7 @@ import bluetit from '../assets/img/bluetit.png'
 
 const FoodieTitle =()=>{
     return (
-        <img className="h-20 p-2 m-4 rounded-full " src={bluetit} alt="food villa" />
+        <img className="h-20 p-2 m-4 rounded-full" src={bluetit} alt="food villa" />
     );
   };
   
