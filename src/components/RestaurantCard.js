@@ -22,9 +22,7 @@ const RestrauntCard = ({
         <div className="w-full text-xs">
         <h2 className="font-bold text-sm my-1">{name}</h2>
         <h3>{cuisines.join(", ")}</h3>
-        <h4>{lastMileTravelString} minutes</h4>
-        <h4>{user.name}</h4>
-        <h4>{user.email}</h4>
+        <h4>{lastMileTravelString}</h4>
         {/* <h1 className="text-center text-base text-transparent hover:text-black bottom-0">----Quick View----</h1> */}
         </div>
       </div>

@@ -8,4 +8,6 @@ const UserContext = createContext({
     
 });
 
+UserContext.displayName="UserContext";
+
 export default UserContext

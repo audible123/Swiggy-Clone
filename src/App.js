@@ -5,11 +5,12 @@ import FoodBody from './components/Body';
 import FoodHeader from './components/Header';
 import { createBrowserRouter , RouterProvider,Outlet } from 'react-router-dom';
  import About from './components/about';
-import Contact from './components/Contact';
+import Contact from './components/Faq';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/shimmer';
 import UserContext from './utils/UserContext';
+import Faq from './components/Faq';
 
 // import Instamart from './components/Instamart'; this is normal import
 
@@ -54,8 +55,8 @@ const appRouter = createBrowserRouter([
         element:<FoodBody/>,
       },
       {
-        path:"/contact",
-        element:<Contact/>,
+        path:"/faq",
+        element:<Faq/>,
       },
       {
         path:"/restaurant/:restaurantId",

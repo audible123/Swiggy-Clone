@@ -1,4 +1,4 @@
-const Contact =()=>{
+const Faq =()=>{
     (
         <div className="about">
         <h1>This is contact page</h1>
@@ -6,5 +6,5 @@ const Contact =()=>{
     );
 };
 
-export default Contact;
+export default Faq;
 

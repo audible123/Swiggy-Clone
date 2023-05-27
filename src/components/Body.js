@@ -4,17 +4,8 @@ import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import {fiterData} from "../utils/helper"
 
-
-//filter lagana tha bsdk rate ho to lowercase mei ( ) hoga
-function fiterData(searchText,allRestaurant){
-  const result = allRestaurant.filter((restaurant)=> restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-  return result;
-}
-
-// => nhi hoga is.me amd the conditional rendering will be inside the function
-
-// dusri wali rendering nhi aa rahi
 
 const FoodBody=()=>{
   const [searchText,setSearchText]=useState();

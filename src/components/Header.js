@@ -22,7 +22,7 @@ const FoodieTitle =()=>{
       <ul className="flex py-10 sm:py-5">
         <Link className="px-2 text-xl mx-5 my-5 text-white " to="/"><li>Home</li></Link>
         <Link className="px-2 text-xl mx-5 my-5 text-white " to="/about"><li>About</li></Link>
-        <Link className="px-2 text-xl mx-5 my-5 text-white " to="/contact"><li>Contact</li></Link>
+        <Link className="px-2 text-xl mx-5 my-5 text-white " to="/faq"><li>FAQs</li></Link>
         <Link className="px-2 text-xl mx-5 my-5 text-white " to="/cart"><li>Cart</li></Link>
         <Link className="px-2 text-xl mx-5 my-5 text-white " to="/instamart"><li>Instamart</li></Link>
       </ul>

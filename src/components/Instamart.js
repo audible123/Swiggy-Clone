@@ -1,8 +1,7 @@
 import { title } from 'process';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Section({title,description,isVisible,setIsVisible}){
-    // const [isVisible,setIsVisible]=useState(false);
     return (
         <div className='border border-black mt-6 mx-2'>
             <h3 className='font-bold'>{title}</h3>
@@ -21,10 +20,26 @@ function Section({title,description,isVisible,setIsVisible}){
 
 function Instamart(){
     const [visiblecomp,setVisiblecomp]=useState("about");
+    const[FaqInfo,setFaqInfo]=useState();
+
+
+    useEffect(()=>{
+        getFaqInfo();
+    })
+
+    async function getFaqInfo(){
+        const data= await fetch("https://www.swiggy.com/dapi/support/issues/faq?");
+        const json= await data.json();
+        setFaqInfo(json?.data?.data);
+        console.log(json?.data?.data);
+    }
+
     return (
         <div className='h-[70vh]'>
             <h1 className='text-center text-4xl
             '>InstaMart Page</h1>
+
+            <h1>{FaqInfo}</h1>
 
             <Section
             title={"About"}
@@ -49,8 +64,9 @@ function Instamart(){
             description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
             isVisible={visiblecomp==="faq"} 
             setIsVisible={()=>setVisiblecomp("faq")}/>
-
         </div>
+
+        
     )
 }
 

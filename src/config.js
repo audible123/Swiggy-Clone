@@ -346,4 +346,4 @@ export const restaurantList = [
     },
   ];
 
-export const IMG_CDN_URL ="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/connection_error_bsppck";
+export const ERR_IMG ="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/connection_error_bsppck";
