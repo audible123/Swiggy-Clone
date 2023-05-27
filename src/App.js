@@ -1,4 +1,4 @@
-import React, { lazy ,Suspense} from 'react';
+import React, { lazy ,Suspense, useState} from 'react';
 import ReactDOM from 'react-dom';
 import FoodFooter from './components/Footer';
 import FoodBody from './components/Body';
@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/shimmer';
+import UserContext from './utils/UserContext';
+
 // import Instamart from './components/Instamart'; this is normal import
 
 //Config Driven UI
@@ -18,12 +20,22 @@ const Instamart = lazy(()=>import("./components/Instamart"));
 
 
 const FoodAppLayout =()=>{
+
+
+  const [user,setUser]=useState({
+    name:"Aditya",
+    email:"as328835@gmail.com",
+  });
   return (
-    <>
+    <UserContext.Provider
+    value={{
+      user:user,
+      setUser:setUser,
+    }}>
     <FoodHeader/>
     <Outlet/>
     <FoodFooter/>
-    </>
+    </UserContext.Provider>
   );
 };
 

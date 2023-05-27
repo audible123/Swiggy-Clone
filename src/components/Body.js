@@ -1,8 +1,9 @@
 import RestrauntCard from "./RestaurantCard";
-import { useState ,useEffect} from "react";
+import { useState ,useEffect,useContext} from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 
 //filter lagana tha bsdk rate ho to lowercase mei ( ) hoga
@@ -19,6 +20,9 @@ const FoodBody=()=>{
   const [searchText,setSearchText]=useState();
   const [allRestaurant,setAllRestaurant]=useState();
   const [filteredRestaurant,setFilteredRestaurant]=useState();
+
+  const {user}=useContext(UserContext);
+
   
   useEffect(()=>{
     //API call
