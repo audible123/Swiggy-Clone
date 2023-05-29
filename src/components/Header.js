@@ -3,16 +3,21 @@ import { useState ,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import bluetit from '../assets/img/bluetit.png'
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
+
+
+
 
 const FoodieTitle =()=>{
-    return (
-        <img className="h-20 p-2 m-4 rounded-full relative max-md:h-20 max-md:p-0 mb-2" src={bluetit} alt="food villa" />
+  return (
+    <img className="h-20 p-2 m-4 rounded-full relative max-md:h-20 max-md:p-0 mb-2" src={bluetit} alt="food villa" />
     );
   };
   
   const FoodHeader =()=>{
     const [isLoggedIn,setIsLoggedLn]=useState(false);
-
+    
+    const cartItem = useSelector((store) => store.cart.items) 
 
     const {user}=useContext(UserContext);
 
@@ -24,7 +29,7 @@ const FoodieTitle =()=>{
         <Link className="px-10 text-white " to="/"><li>Home</li></Link>
         <Link className="pr-10 text-white " to="/about"><li>About</li></Link>
         <Link className="pr-10 text-white " to="/faq"><li>FAQs</li></Link>
-        <Link className="pr-10 text-white " to="/cart"><li>Cart</li></Link>
+        <Link className="pr-10 text-white " to="/cart"><li>Cart - {cartItem.length}</li></Link>
         <Link className="pr-10 text-white " to="/instamart"><li>Instamart</li></Link>
       </ul>
       <div className='pr-10 mb-4 text-lg flex flex-col '>

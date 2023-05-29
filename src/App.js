@@ -5,13 +5,14 @@ import FoodBody from './components/Body';
 import FoodHeader from './components/Header';
 import { createBrowserRouter , RouterProvider,Outlet } from 'react-router-dom';
  import About from './components/about';
-import Contact from './components/Faq';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/shimmer';
 import UserContext from './utils/UserContext';
 import Cart from './components/Cart';
 import Faq from './components/Faq';
+import store from './utils/Store';
+import { Provider } from 'react-redux';
 
 // import Instamart from './components/Instamart'; this is normal import
 
@@ -29,6 +30,7 @@ const FoodAppLayout =()=>{
     email:"as328835@gmail.com",
   });
   return (
+    <Provider store={store}>
     <UserContext.Provider
     value={{
       user:user,
@@ -38,6 +40,7 @@ const FoodAppLayout =()=>{
     <Outlet/>
     <FoodFooter/>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -70,7 +73,7 @@ const appRouter = createBrowserRouter([
       {
         path:"/instamart",
         element:<Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
-      }
+      },
     ],
   },
 

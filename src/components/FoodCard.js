@@ -12,3 +12,5 @@ function FoodCard({}){
         </div>
     )
 }
+
+export default FoodCard

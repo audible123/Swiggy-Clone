@@ -10,3 +10,4 @@ export function fiterData(searchText,allRestaurant){
 
 
 // https://www.swiggy.com/dapi/support/issues/faq?
+

@@ -13,14 +13,14 @@ function Faq() {
     async function getFaqInfo(){
         const data= await fetch("https://www.swiggy.com/dapi/support/issues/faq?");
         const json= await data.json();
-        setFaqInfo(json?.data?.issues);
+        setFaqInfo(json?.data?.issues?.data);
     }
 
   return (
     <div className='h-[70vh]'>
         <ul className=''>
             {FaqInfo.map((faq,index)=>(
-                <QuestionCard key={index} faq={faq}/>
+                <QuestionCard key={faq.id} faq={faq}/>
             ))}
         </ul>
     </div>
@@ -28,34 +28,3 @@ function Faq() {
 };
 
 export default Faq;
-
-
-function Instamart(){
-    return (
-        <div className='h-[70vh]'>
-            <Section
-            title={"about"}
-            description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
-            isVisible={visiblecomp==="about"}
-            setIsVisible={()=>setVisiblecomp("about")} />
-            
-            <Section
-            title={"Team of Instamart"}
-            description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
-            isVisible={visiblecomp==="team"}
-            setIsVisible={()=>setVisiblecomp("team")} />
-
-            <Section
-            title={"Careers"}
-            description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
-            isVisible={visiblecomp==="career"}
-            setIsVisible={()=>setVisiblecomp("career")} />
-
-            <Section
-            title={"FAQs"}
-            description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
-            isVisible={visiblecomp==="faq"} 
-            setIsVisible={()=>setVisiblecomp("faq")}/>
-        </div> 
-    )
-}
