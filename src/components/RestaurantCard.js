@@ -8,10 +8,10 @@ const RestrauntCard = ({
     lastMileTravelString,
   }) => {
 
-    const {user}=useContext(UserContext);
+    // const {user}=useContext(UserContext);
 
     return (
-      <div className="w-40 h-56 p-3 shadow-md hover:border-b-2 hover:shadow-2xl">
+      <div className="w-40 h-56 p-3 shadow-md hover:border-b-2 hover:shadow-2xl max-sm:w-[200px] max-sm:h-64">
         <img
           className="w-full"
           src={
@@ -19,8 +19,8 @@ const RestrauntCard = ({
             cloudinaryImageId
           }
         />
-        <div className="w-full text-xs">
-        <h2 className="font-bold text-sm my-1">{name}</h2>
+        <div className="w-full text-xs ">
+        <h2 className="font-bold text-sm my-1 max-sm:text">{name}</h2>
         <h3>{cuisines.join(", ")}</h3>
         <h4>{lastMileTravelString}</h4>
         {/* <h1 className="text-center text-base text-transparent hover:text-black bottom-0">----Quick View----</h1> */}

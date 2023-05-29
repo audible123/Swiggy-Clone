@@ -16,16 +16,13 @@ function About() {
   }
 
   return (
-    <div className="h-[70vh]">
-    <div className='m-8'>
-    <img className='h-48 w-48 rounded-full' src="https://avatars.githubusercontent.com/u/121515934?v=4" alt="Image not found" />
-    <h1 className='text-2xl'>{myInfo?.name}</h1>
-    <h2 className='text-2xl'>I live in {myInfo?.location}</h2>
-    <h2 className='text-2xl'>Followers : {myInfo?.followers}</h2>
-    <h2 className='text-2xl'>Following : {myInfo?.following}</h2>
-    <h2 className='text-2xl'>Email : {myInfo?.email}</h2>
-    <h2 className='text-2xl'>Hireable : {myInfo?.hireable}</h2>
-    <h2 className='text-2xl'>Twitter Account : {myInfo?.twitter_username}</h2>
+    <div className="h-[70vh]  flex justify-center items-center">
+    <div className='flex justify-center items-center bg-[#c9ecf3] shadow-2xl max-sm:'>
+    <img className='h-64 w-64 m-8 max-sm:h-32 max-sm:w-32' src="https://avatars.githubusercontent.com/u/121515934?v=4" alt="Image not found" />
+    <div>
+    <h1 className='text-xl mr-16 my-5'>&#x1F603; {myInfo?.name}</h1>
+    <h2 className='text-xl mr-16 my-5'>	&#127758; {myInfo?.location}</h2>
+    </div>
     </div>
     </div>
   )

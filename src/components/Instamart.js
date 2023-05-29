@@ -20,29 +20,10 @@ function Section({title,description,isVisible,setIsVisible}){
 
 function Instamart(){
     const [visiblecomp,setVisiblecomp]=useState("about");
-    const[FaqInfo,setFaqInfo]=useState();
-
-
-    useEffect(()=>{
-        getFaqInfo();
-    })
-
-    async function getFaqInfo(){
-        const data= await fetch("https://www.swiggy.com/dapi/support/issues/faq?");
-        const json= await data.json();
-        setFaqInfo(json?.data?.data);
-        console.log(json?.data?.data);
-    }
-
     return (
         <div className='h-[70vh]'>
-            <h1 className='text-center text-4xl
-            '>InstaMart Page</h1>
-
-            <h1>{FaqInfo}</h1>
-
             <Section
-            title={"About"}
+            title={"about"}
             description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
             isVisible={visiblecomp==="about"}
             setIsVisible={()=>setVisiblecomp("about")} />
@@ -64,9 +45,7 @@ function Instamart(){
             description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae assumenda maiores dolorem quam dolorum delectus accusantium harum quisquam adipisci?"}
             isVisible={visiblecomp==="faq"} 
             setIsVisible={()=>setVisiblecomp("faq")}/>
-        </div>
-
-        
+        </div> 
     )
 }
 

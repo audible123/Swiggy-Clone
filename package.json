@@ -29,10 +29,12 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.3.1",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",
     "yup": "^1.1.1"
   }

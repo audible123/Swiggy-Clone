@@ -64,6 +64,9 @@ const FoodBody=()=>{
         }}
         >Go</button>
       </div>
+
+        <h1 className="font-bold text-2xl ml-8 max-sm:text-4xl max-sm:ml-8">Available Restaurants</h1>
+        <hr className="border-b-2" />
       
     <div className="flex my-14 mx-4 flex-wrap">{
     filteredRestaurant.map((restaurant) => {

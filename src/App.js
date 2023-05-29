@@ -10,6 +10,7 @@ import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/shimmer';
 import UserContext from './utils/UserContext';
+import Cart from './components/Cart';
 import Faq from './components/Faq';
 
 // import Instamart from './components/Instamart'; this is normal import
@@ -53,6 +54,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/",
         element:<FoodBody/>,
+      },
+      {
+        path:"/cart",
+        element:<Cart/>,
       },
       {
         path:"/faq",
