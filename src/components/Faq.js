@@ -17,12 +17,8 @@ function Faq() {
     }
 
   return (
-    <div className='h-[70vh]'>
-        <ul className=''>
-            {FaqInfo.map((faq,index)=>(
-                <QuestionCard key={faq.id} faq={faq}/>
-            ))}
-        </ul>
+    <div className='h-auto'>
+        <QuestionCard faq={FaqInfo}/>
     </div>
   );
 };

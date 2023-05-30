@@ -1,14 +1,14 @@
-
-const QuestionCard =({
-    title,
-    description,
-}) => {
+function QuestionCard({ faq }) {
     return (
-        <div>
-            <h2>{title}</h2>
-            <h2>{description}</h2>
-        </div>
-    )
-}
+      <div>
+        {faq && faq.map((item) => (
+          <div className="m-5 shadow-2xl" key={item.id}>
+            <h2 className="font-bold">{item.title}</h2>
+            <p className="">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
 export default QuestionCard
