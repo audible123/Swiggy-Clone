@@ -28,8 +28,8 @@ const RestaurantMenu =()=>{
             <div>
             <h1 className="font-bold mx-7 max-sm:text-center">Restaurant :{restaurantId}</h1>
             <h1 className="font-bold text-4xl mx-7">{restaurantInfo?.name}</h1>
-            <div className="flex max-sm:flex-col ">
-            <img className="h-96 m-7" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" + restaurantInfo.cloudinaryImageId} />
+            <div className="flex flex-col ">
+            <img className="h-60 w-60 m-7" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" + restaurantInfo.cloudinaryImageId} />
             <div className="text-lg m-7">
             <h3>{"AreaName: "+restaurantInfo?.areaName}</h3>
             <h3>{"City: "+restaurantInfo?.city}</h3>
@@ -40,8 +40,6 @@ const RestaurantMenu =()=>{
             </div>
             </div>
             <div>
-            </div>
-            <hr />
             <h1 className="text-center font-bold text-4xl">Menu</h1>
             <div>
                 {restaurantMenuInfo && restaurantMenuInfo.map((Menu)=>(
@@ -51,6 +49,8 @@ const RestaurantMenu =()=>{
                     </div>
                 ))}
             </div>
+            </div>
+            
         </div>
         </div>   
     );
