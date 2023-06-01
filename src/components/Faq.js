@@ -1,26 +1,31 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
-import QuestionCard from './QuestionCard';
+import React, { useEffect, useState } from "react";
+import QuestionList from "./QuestionList";
 
-function Faq() {
-    const[FaqInfo,setFaqInfo]=useState();
-    const [visiblecomp,setVisiblecomp]=useState("about");
+const FAQ = () => {
+  const [userFAQ, setUserFAQ] = useState("");
 
-    useEffect(()=>{
-        getFaqInfo();
-    },[])
+  const fetchFAQ = async () => {
+    const data = await fetch("https://www.swiggy.com/dapi/support/issues/faq");
+    const json = await data.json();
 
-    async function getFaqInfo(){
-        const data= await fetch("https://www.swiggy.com/dapi/support/issues/faq?");
-        const json= await data.json();
-        setFaqInfo(json?.data?.issues?.data);
-    }
+    setUserFAQ(json);
+    console.log(json);
+    console.log(userFAQ?.data?.issues?.data[0]);
+  };
 
-  return (
-    <div className='h-auto'>
-        <QuestionCard faq={FaqInfo}/>
-    </div>
-  );
+  useEffect(() => {
+    fetchFAQ();
+  }, []);
+
+return (
+  <div className="relative h-auto">
+    {userFAQ?.data?.issues?.data.map((Question) => (
+      <div key={Question.id}>
+        <QuestionList {...Question} />
+      </div>
+    ))}
+  </div>
+);
 };
 
-export default Faq;
+export default FAQ;

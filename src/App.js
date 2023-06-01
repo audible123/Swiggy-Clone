@@ -1,5 +1,5 @@
 import React, { lazy ,Suspense, useState} from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import FoodFooter from './components/Footer';
 import FoodBody from './components/Body';
 import FoodHeader from './components/Header';
