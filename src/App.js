@@ -13,6 +13,7 @@ import Cart from './components/Cart';
 import Faq from './components/Faq';
 import store from './utils/Store';
 import { Provider } from 'react-redux';
+import Cararoul from './components/Cararoul';
 
 // import Instamart from './components/Instamart'; this is normal import
 

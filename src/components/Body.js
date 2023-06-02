@@ -21,7 +21,7 @@ const FoodBody=()=>{
   },[])
   
   async function getRestaurant(){
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.9202266&lng=81.1795848&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8909865&lng=81.0734343&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
@@ -50,7 +50,7 @@ const FoodBody=()=>{
   ); 
   
   //  .length lagana tha  
-  return allRestaurant.length ===0 ?(<Shimmer/>):(
+  return allRestaurant?.length ===0 ?(<Shimmer/>):(
     <>
     <div className=" flex text-center p-5 my-5 justify-center items-center">
       <input className="w-[430px] shadow-xl p-1" type="text" placeholder="Search" value={searchText} onChange={

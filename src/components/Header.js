@@ -1,4 +1,3 @@
-import gukalo from '../assets/img/gukalo.png'
 import { useState ,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import bluetit from '../assets/img/bluetit.png'
