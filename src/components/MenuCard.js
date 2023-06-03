@@ -1,4 +1,3 @@
-import { err_image } from "../config";
 import { IMG_CDN_URL } from "../config";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/CartSlice";
@@ -20,8 +19,16 @@ export const Data = (props) => {
        />
       <div className="w-full text-xs ">
       <h2 className="font-bold text-sm my-1 max-sm:text">{props?.name}</h2>
-      <h3 className="text-[15px] m-1">{props?.defaultPrice ? "₹" + props?.defaultPrice/100 : 'Price not available'}</h3>
-      <h4 className="m-1">{props?.itemAttribute?.vegClassifier}</h4>
+
+      <h3 
+      className="text-[15px] m-1">
+        {props?.defaultPrice ? "₹" + props?.defaultPrice/100 : 'Price not available'}</h3>
+
+      <h4 
+      className="m-1">
+        {props?.itemAttribute?.vegClassifier}</h4>
+
+
       {console.log("Menu.card.info:",props?.defaultPrice )}
       </div>
       {/*  */}
@@ -30,7 +37,7 @@ export const Data = (props) => {
 };
 
 
-export const MenuCard=(props,info)=>{
+export const MenuCard=(props)=>{
 
   const dispatch = useDispatch();
 

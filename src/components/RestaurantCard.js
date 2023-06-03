@@ -21,7 +21,7 @@ const RestrauntCard = ({
     }
 
     return (
-      <div className=" w-40 h-min-[224px] p-3 shadow-md hover:border-b-2 hover:shadow-2xl max-sm:w-[200px] max-sm:h-64" onMouseEnter={()=> showQuickView()} onMouseLeave={()=> hideQuickView()}>
+      <div className=" w-40 h-min-[224px] p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64" onMouseEnter={()=> showQuickView()} onMouseLeave={()=> hideQuickView()}>
         <img
           className="w-full"
           src={

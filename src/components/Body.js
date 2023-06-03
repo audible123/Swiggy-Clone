@@ -43,9 +43,11 @@ const FoodBody=()=>{
   );
   
   if(filteredRestaurant.length === 0) return (
-    <div className="null-restaurant" style={{height:"40vh"}}>
+    <div className="flex justify-center items-center">
+    <div className="min-h-[70vh] mt-32">
       <img src="https://static.vecteezy.com/system/resources/thumbnails/007/415/858/small/holding-signboard-404-not-found-cute-pear-cartoon-vector.jpg" alt="Error" />
-      <h1>No Match Found</h1>
+      <h1 className="text-4xl">No Match Found</h1>
+    </div>
     </div>
   ); 
   

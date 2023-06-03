@@ -4,7 +4,6 @@ import useRestaurant from "../utils/useRestaurant";
 import {MenuCard} from "./MenuCard";
 import useRestaurant from "../utils/useRestaurant";
 
-
 const RestaurantMenu =()=>{
     const {restaurantId} = useParams();
     const restaurantInfoArray = useRestaurant(restaurantId);
@@ -15,6 +14,9 @@ const RestaurantMenu =()=>{
    console.log({restaurantInfo})
 
    console.log({restaurantMenuInfo})
+
+
+   
    
     return (!restaurantInfo) ? (
         <Shimmer/> 
@@ -27,12 +29,24 @@ const RestaurantMenu =()=>{
             <img className="h-[268px] w-[268px] m-2 max-sm:h-[300px] max-sm:w-[350px] max-sm:mx-16" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" + restaurantInfo.cloudinaryImageId} />   
             </div>
             <div className="text-sm m-7 font-medium max-sm:text-4xl max-sm:mx-auto">
-            <h3>{"AreaName: "+restaurantInfo?.areaName}</h3>
-            <h3>{"City: "+restaurantInfo?.city}</h3>
-            <h3>{restaurantInfo?.avgRating + " stars"}</h3>
-            <h3>{"CostForTwo: "+restaurantInfo?.costForTwo}</h3>
-            <h3>{"Veg: "+ restaurantInfo?.veg }</h3>
-            <h3>{restaurantInfo?.costForTwoMessage}</h3>
+            <h3>
+                <span className="font-bold">Area Name : </span>
+                {restaurantInfo?.areaName}</h3>
+            <h3>
+                <span className="font-bold">City : </span>
+            {"City: "+restaurantInfo?.city}</h3>
+            <h3>
+                <span className="font-bold">avgRating : </span>
+                {restaurantInfo?.avgRating + " stars"}</h3>
+            <h3>
+                <span className="font-bold">CostForTwo : </span>
+                 {"CostForTwo: "+restaurantInfo?.costForTwo}</h3>
+            <h3> 
+                <span className="font-bold">Veg/Non-Veg : </span>
+                {restaurantInfo?.veg ? "Veg: "+ restaurantInfo?.veg : "Not  Specified" }</h3>
+            <h3>
+                <span className="font-bold"></span>
+                {restaurantInfo?.costForTwoMessage}</h3>
             </div>
             </div>
             <div></div>
