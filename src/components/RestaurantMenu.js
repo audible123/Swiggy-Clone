@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
 import {useParams} from "react-router-dom";
 import Shimmer from "./shimmer";
 import useRestaurant from "../utils/useRestaurant";
 import {MenuCard} from "./MenuCard";
-import { IMG_CDN_URL } from "../config";
 import useRestaurant from "../utils/useRestaurant";
 
 
@@ -23,7 +20,7 @@ const RestaurantMenu =()=>{
         <Shimmer/> 
     ) : (
         <div className="flex flex-row justify-between max-md:flex-col">
-            <div className="flex flex-col max-w-[500px] w-[100%] border-2 py-10 bg-[rgb(237,241,247)]  items-start max-md:max-w-full">
+            <div className="flex flex-col max-w-[500px] w-[100%] border-2 py-10 bg-[rgb(237,241,247)]  items-start max-md:max-w-full max-sm:max-w-full">
             <h1 className="font-bold mx-7 max-sm:text-center max-sm:mx-auto">Restaurant :{restaurantId}</h1>
             <h1 className=" font-bold text-4xl mx-7 max-sm:mx-16 max-sm:text-6xl">{restaurantInfo?.name}</h1>  
             <div  className="flex flex-col m-5 max-md:flex-row">
@@ -40,15 +37,18 @@ const RestaurantMenu =()=>{
             </div>
             <div></div>
             <hr/>
-            <div className="font-bold text-4xl" ><h1 >Menu</h1></div>
-            <div className="flex flex-wrap flex-col">
-            <div>
+            <div className="flex flex-col">
+            <div className="items-start font-bold text-4xl h-16" ><h1 className="text-center p-3">Menu</h1></div>
+            <div >
+            <div className="flex flex-wrap w-[1020px] justify-center max-sm:w-[500px]">
             {restaurantMenuInfo && restaurantMenuInfo.map((Menu)=>{
                     return(
+                        
                         <div key={Menu?.card?.info?.id}>
                         <MenuCard {...Menu?.card?.info} />
                         </div>
                     )})}
+            </div>
             </div>
             </div>
         </div>

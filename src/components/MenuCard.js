@@ -39,7 +39,7 @@ export const MenuCard=(props,info)=>{
   }
 
   return(
-    <div className="w-40 h-auto m-2 p-3 shadow-lg hover:border-b-2 hover:shadow-2xl max-sm:w-[200px] max-sm:h-64">
+    <div className="w-40 h-min-[300px] m-2 p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64">
     <Data {...props} />
     <div className=" left-0 right-0 ">
     <button className="bg-blue-950 text-white p-1 rounded-lg" onClick={()=> handleClick(props)}>Add Item</button>
