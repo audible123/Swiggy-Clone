@@ -35,7 +35,7 @@ const FoodBody=()=>{
  
   
   if(!allRestaurant) return (
-    <div className="null-restaurant flex flex-col justify-center items-center h-[70vh]" >
+    <div className="null-restaurant flex flex-col justify-center items-center h-[70vh] w-full overflow-x-hidden" >
       <img className="h-52 w-60" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/connection_error_bsppck" alt="Error" />
       <h1>Oh ! All the restaurants are currently unserviceable</h1>
       <h3>All restaurant are unserviceable,check back in some time.</h3>

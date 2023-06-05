@@ -1,8 +1,7 @@
 import { IMG_CDN_URL } from "../config";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/CartSlice";
-
-
+import { removeItem } from "../utils/CartSlice";
 
 
 export const Data = (props) => {
@@ -22,7 +21,7 @@ export const Data = (props) => {
 
       <h3 
       className="text-[15px] m-1">
-        {props?.defaultPrice ? "₹" + props?.defaultPrice/100 : 'Price not available'}</h3>
+      ₹ {props?.defaultPrice ? + props?.defaultPrice/100 :'251'}</h3>
 
       <h4 
       className="m-1">
@@ -41,15 +40,20 @@ export const MenuCard=(props)=>{
 
   const dispatch = useDispatch();
 
-  const handleClick=(props)=>{
+  const handleAdd=(props)=>{
     dispatch(addItem(props))
+  }
+
+  const handleRemove=(props)=>{
+    dispatch(removeItem(props))
   }
 
   return(
     <div className="w-40 h-min-[300px] m-2 p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64">
     <Data {...props} />
-    <div className=" left-0 right-0 ">
-    <button className="bg-blue-950 text-white p-1 rounded-lg" onClick={()=> handleClick(props)}>Add Item</button>
+    <div className="flex justify-evenly flex-col">
+    <button className="bg-blue-950 text-white p-1  w-full m-1" onClick={()=> handleAdd(props)}>Add </button>
+    <button className="bg-blue-950 text-white p-1  w-full m-1" onClick={()=> handleRemove(props)}>Remove </button>
     </div>
     </div>
   )

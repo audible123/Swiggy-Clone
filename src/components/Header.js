@@ -21,7 +21,7 @@ const FoodieTitle =()=>{
     const {user}=useContext(UserContext);
 
     return (
-      <header className="flex justify-between shadow-xl h-28 bg-gradient-to-r from-blue-900 to-black max-md:justify-center max-md:h-40 max-md:flex-col max-md:items-center ">
+      <header className="flex justify-between shadow-xl h-28 bg-gradient-to-r from-blue-900 to-black max-md:justify-center max-md:h-40 max-md:flex-col max-md:items-center overflow-x-hidden overflow-y-hidden">
       <FoodieTitle/>
       <div className='right flex items-center'>
       <ul className="nav-list flex">

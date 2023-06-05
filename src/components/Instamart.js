@@ -3,7 +3,7 @@ import React from 'react'
 function Instamart() {
   return (
     <div>
-        <h1 className='font-bold text-6xl text-center'>Download InstaMart - Grocery Delivery App</h1>
+        <h1 className='font-bold text-6xl text-center shadow-2xl p-4'>Download InstaMart - Grocery Delivery App</h1>
         <img className='h-[400px] mx-auto' src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1000/InstamartMicrosite/FooterVisual" alt="" />
 
 

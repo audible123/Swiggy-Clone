@@ -9,11 +9,11 @@ import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/shimmer';
 import UserContext from './utils/UserContext';
-import Cart from './components/Cart';
+import {Cart} from './components/Cart';
 import Faq from './components/Faq';
 import store from './utils/Store';
 import { Provider } from 'react-redux';
-import Cararoul from './components/Cararoul';
+import MapAndPayment from './components/MapAndPayment';
 
 // import Instamart from './components/Instamart'; this is normal import
 
@@ -74,6 +74,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/instamart",
         element:<Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
+      },
+      {
+        path:"/mapandpayment",
+        element:<MapAndPayment/>,
       },
     ],
   },
