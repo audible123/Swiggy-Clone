@@ -8,6 +8,8 @@ export const Data = (props) => {
 
   console.log({props})
 
+  const fakeprice = 251;
+
   return (
     <div>
       <img className="w-full h-20" src={IMG_CDN_URL + props?.imageId} 
@@ -21,7 +23,7 @@ export const Data = (props) => {
 
       <h3 
       className="text-[15px] m-1">
-      ₹ {props?.defaultPrice ? + props?.defaultPrice/100 :'251'}</h3>
+      ₹ {props?.defaultPrice ? + props?.defaultPrice/100 : fakeprice}</h3>
 
       <h4 
       className="m-1">
@@ -49,11 +51,11 @@ export const MenuCard=(props)=>{
   }
 
   return(
-    <div className="w-40 h-min-[300px] m-2 p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64">
+    <div className="w-52 h-72 m-2 p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64">
     <Data {...props} />
     <div className="flex justify-evenly flex-col">
-    <button className="bg-blue-950 text-white p-1  w-full m-1" onClick={()=> handleAdd(props)}>Add </button>
-    <button className="bg-blue-950 text-white p-1  w-full m-1" onClick={()=> handleRemove(props)}>Remove </button>
+    <button className="shadow-lg text-[#60b246] border border-[#60b246] p-1  w-full m-1 hover:bg-[#60b246] hover:text-white" onClick={()=> handleAdd(props)}>Add </button>
+    <button className="shadow-lg text-red-600 border border-red-600 p-1  w-full m-1 hover:bg-red-600 hover:text-white" onClick={()=> handleRemove(props)}>Remove </button>
     </div>
     </div>
   )

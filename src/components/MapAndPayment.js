@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { TotalPrice,CancelPolicy } from './Cart'
+import { GoogleMaps } from '../utils/helper'
+
 
 function Map({isVisible,setIsVisible}){
     return(
@@ -13,7 +15,20 @@ function Map({isVisible,setIsVisible}){
         }}>Select your address    
         </button>}
         {isVisible && 
-        <div className='h-[70vh] shadow-2xl'>
+        <div className='h-[85vh] shadow-2xl'>
+            <div>
+            <div className='font-bold text-2xl m-3'>Save delivery address</div>
+            <GoogleMaps/>
+            <div className='m-2' >
+                <input type="text" placeholder='Door/Flat No.' className='border border-gray-400 h-[70px] w-[100%] text-[17px] px-[20px] pt-[22px] box-border whitespace-nowrap overflow-x-hidden text-ellipsis font-semibold' />
+                {/* <div><label class="" for="building">Door/Flat No.</label></div> */}
+            </div>
+            <div className='m-2'>
+                <input type="text" placeholder='Landmark' className='border border-gray-400 h-[70px] w-[100%] text-[17px] px-[20px] pt-[22px] box-border whitespace-nowrap overflow-x-hidden text-ellipsis font-semibold' />
+                {/* <div><label class="" for="landmark" className=''>Landmark </label></div> */}
+            </div>
+                <button className=' h-14 w-[90%] m-5 bg-gradient-to-r border border-blue-900 from-blue-900 to-black text-white'>SAVE ADDRESS & PROCEED</button>
+            </div>
         </div>}
         </div>
     )

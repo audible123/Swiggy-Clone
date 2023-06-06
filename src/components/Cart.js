@@ -17,6 +17,35 @@ export function CancelPolicy(){
 
 
 export function TotalPrice(){
+
+    const TotalCost = useSelector((store)=> store.cart.items)
+
+    const deliverycharge = 20 ;
+    const gst =15;
+
+    function addCartItem (items){
+
+
+        const fakeprice = 251;
+
+
+
+        let sum = 0;
+        for (let i = 0; i < items.length; i++) {
+            if(items[i]?.defaultPrice)
+            {
+                sum += items[i]?.defaultPrice/100;
+            }
+            else{
+                sum += fakeprice;
+            }
+        }
+        
+        return (sum);
+    }
+
+    const Total = addCartItem(TotalCost);
+
     return (
         <div className='m-10 shadow-2xl max-sm:col-span-2 p-3 h-[30vh]'>
         <h1 className='font-bold text-4xl m-3'>Summary</h1>
@@ -27,20 +56,19 @@ export function TotalPrice(){
             <br />
             <hr />
             <h1>GST </h1>
-
         </div>
         <div className=''>
-            <h1>$1000</h1>
-            <h1>$10</h1>
+            <h1>{Total}</h1>
+            <h1>20</h1>
             <br />
             <hr />
-            <h1>$65</h1>
+            <h1>15</h1>
         </div>
         <div className=' col-span-3 '>
             <h1 className='font-bold'>Total</h1>
         </div>
         <div className=' col-span-1 '>
-            <h1 className='font-bold'>$1000</h1>
+            <h1 className='font-bold'>{deliverycharge + Total + gst}</h1>
         </div>
         
         </div>
@@ -61,6 +89,19 @@ export function Cart(){
     const handleClearCart=()=>{
         dispatch(clearCart());
     }
+
+    if(cartItem.length === 0) return (
+        <div className="flex justify-center items-center">
+        <div className="min-h-[70vh] mt-32">
+          <img className="h-[250px] w-auto mb-4 mx-auto" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0" alt="Error" />
+          <h1 className="text-4xl text-center">Your cart is empty</h1>
+          <h3 className='text-center'>You can go to home page to view more restaurants</h3>
+          <Link to="/">
+          <button className=' h-14 w-[90%] m-5 bg-[#fc8019] text-white'>SEE RESTAURANTS NEAR YOU</button>
+          </Link>
+        </div>
+        </div>
+    )
 
     return (
         <div className='min-h-screen m-4 flex flex-wrap flex-col bg-gray-200'>

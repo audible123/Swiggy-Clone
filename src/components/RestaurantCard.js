@@ -21,7 +21,7 @@ const RestrauntCard = ({
     }
 
     return (
-      <div className=" w-40 h-min-[224px] p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64" onMouseEnter={()=> showQuickView()} onMouseLeave={()=> hideQuickView()}>
+      <div className=" w-40 h-60 h-min-[224px] p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64" onMouseEnter={()=> showQuickView()} onMouseLeave={()=> hideQuickView()}>
         <img
           className="w-full"
           src={
@@ -33,7 +33,7 @@ const RestrauntCard = ({
         <h2 className="font-bold text-sm my-1 max-sm:text">{name}</h2>
         <h3>{cuisines?.join(", ")}</h3>
         <h4>{lastMileTravelString}</h4>
-        <h1 className={`text-center text-base text-transparent ${isHovered ? "hover:text-black" : ""} bottom-0`}>----Quick View----</h1>
+        {/* <h1 className={`text-center text-base text-transparent ${isHovered ? "hover:text-black" : ""} bottom-0`}>----Quick View----</h1> */}
         </div>
       </div>
     );

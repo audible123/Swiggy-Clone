@@ -59,7 +59,7 @@ const FoodBody=()=>{
         (e)=>{
           setSearchText(e.target.value);
         }} />
-        <button className="bg-gradient-to-r from-blue-900 to-black text-white p-[5px] box-border rounded-r-[25px]"
+        <button className="bg-black text-white p-[5px] box-border rounded-r-[25px]"
         onClick={()=>{
           const data= fiterData(searchText,allRestaurant);
           setFilteredRestaurant(data);
