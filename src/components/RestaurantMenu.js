@@ -54,7 +54,7 @@ const RestaurantMenu =()=>{
             <div className="flex flex-col">
             <div className="items-start font-bold text-4xl h-16" ><h1 className="text-center p-3">Menu</h1></div>
             <div >
-            <div className="flex flex-wrap w-[1020px] justify-evenly max-sm:w-[500px] max-sm:my-10">
+            <div className="flex flex-wrap w-[1020px] mb-10 justify-evenly max-sm:w-[500px] max-sm:my-10">
             
             {restaurantMenuInfo && restaurantMenuInfo.map((Menu)=>{
                     return(

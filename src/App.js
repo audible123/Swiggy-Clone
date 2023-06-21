@@ -14,6 +14,7 @@ import Faq from './components/Faq';
 import store from './utils/Store';
 import { Provider } from 'react-redux';
 import MapAndPayment from './components/MapAndPayment';
+import { Credit, NetBanking, UPI, Wallet } from './components/PaymentOptions';
 
 // import Instamart from './components/Instamart'; this is normal import
 
@@ -78,6 +79,24 @@ const appRouter = createBrowserRouter([
       {
         path:"/mapandpayment",
         element:<MapAndPayment/>,
+        children:[
+          {
+            path:"/mapandpayment",
+            element:<Wallet/>,
+          },
+          {
+            path:"UPI",
+            element:<UPI/>,
+          },
+          {
+            path:"NetBanking",
+            element:<NetBanking/>,
+          },
+          {
+            path:"Credit",
+            element:<Credit/>,
+          },
+        ],
       },
     ],
   },

@@ -106,8 +106,8 @@ export function Cart(){
     return (
         <div className='min-h-screen m-4 flex flex-wrap flex-col bg-gray-200'>
             <div className='bg-white m-10 p-5'>
-            <h1 className='font-bold my-5'>Cart Items-{cartItem.length}</h1>
-            <button className='border bg-blue-100 p-1 h-10 w-28' onClick={()=>{
+            <h1 className='font-bold text-2xl m-5'>Cart Items-{cartItem.length}</h1>
+            <button className='shadow-lg text-red-600 border border-red-600 p-3 mx-5 hover:bg-red-600 hover:text-white' onClick={()=>{
                 handleClearCart();
             }}>Clear Cart</button>
             <div className=''>
@@ -122,9 +122,9 @@ export function Cart(){
             <CancelPolicy/>
             </div>
             <div className='flex justify-end m-10 max-sm:justify-evenly'>
-            <Link to="/mapandpayment" ><button className='border bg-blue-100 p-1 h-10 m-4 w-28'>Proceed</button>
+            <Link to="/mapandpayment" ><button className='shadow-lg text-[#60b246] border border-[#60b246] w-[90%] hover:bg-[#60b246] hover:text-white p-3 mx-5'>Proceed</button>
             </Link>
-            <button className='border bg-blue-100 p-1 h-10 m-4 w-28' onClick={()=>{
+            <button className='shadow-lg text-red-600 border border-red-600 p-3 mx-5 hover:bg-red-600 hover:text-white ' onClick={()=>{
                 handleClearCart();
             }}>Clear Cart</button>
             </div>

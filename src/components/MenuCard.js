@@ -12,7 +12,7 @@ export const Data = (props) => {
 
   return (
     <div>
-      <img className="w-full h-20" src={IMG_CDN_URL + props?.imageId} 
+      <img className="w-full h-24" src={IMG_CDN_URL + props?.imageId} 
 
       onError={(event)=>{
         event.target.src ="https://restaurantden.com/wp-content/uploads/2017/09/free-stock-food-photography-websites.jpg"
@@ -22,11 +22,11 @@ export const Data = (props) => {
       <h2 className="font-bold text-sm my-1 max-sm:text">{props?.name}</h2>
 
       <h3 
-      className="text-[15px] m-1">
+      className="text-[11px] m-1">
       ₹ {props?.defaultPrice ? + props?.defaultPrice/100 : fakeprice}</h3>
 
       <h4 
-      className="m-1">
+      className="m-1 text-[11px]">
         {props?.itemAttribute?.vegClassifier}</h4>
 
 

@@ -39,7 +39,7 @@
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "react-redux": "^8.0.7",
-    "react-router-dom": "^6.11.1",
+    "react-router-dom": "^6.13.0",
     "yup": "^1.1.1"
   }
 }
