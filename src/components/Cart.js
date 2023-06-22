@@ -4,10 +4,11 @@ import { clearCart } from '../utils/CartSlice'
 import { useDispatch } from 'react-redux'
 import {MenuCard} from './MenuCard'
 import { Link } from 'react-router-dom'
+import { addPrice } from '../utils/PaySlice'
 
 export function CancelPolicy(){
     return (
-        <div className=' mt-10 p-10 m-10 shadow-2xl max-sm:col-span-2 max-sm:h-[40vh] '>
+        <div className=' mt-10 p-10 m-10 shadow-2xl max-sm:col-span-2 max-sm:h-auto '>
         <h1>Review your order and address details to avoid cancellations</h1>
         <h2>Note: If you cancel within 60 seconds of placing your order, a 100% refund will be issued. No refund for cancellations made after 60 seconds.Avoid cancellation as it leads to food wastage.</h2>
         <Link className='text-red-800' to={"https://www.swiggy.com/refund-policy"}>Read cancellation policy</Link>
@@ -28,6 +29,7 @@ export function TotalPrice(){
 
         const fakeprice = 251;
 
+        const dispatch = useDispatch();
 
 
         let sum = 0;
@@ -40,11 +42,16 @@ export function TotalPrice(){
                 sum += fakeprice;
             }
         }
+
+        dispatch(addPrice(sum+gst+deliverycharge));
         
         return (sum);
     }
 
     const Total = addCartItem(TotalCost);
+
+
+
 
     return (
         <div className='m-10 shadow-2xl max-sm:col-span-2 p-3 h-[30vh]'>
@@ -68,7 +75,8 @@ export function TotalPrice(){
             <h1 className='font-bold'>Total</h1>
         </div>
         <div className=' col-span-1 '>
-            <h1 className='font-bold'>{deliverycharge + Total + gst}</h1>
+            <h1 className='font-bold'>
+                {deliverycharge + Total + gst}</h1>
         </div>
         
         </div>
@@ -107,10 +115,10 @@ export function Cart(){
         <div className='min-h-screen m-4 flex flex-wrap flex-col bg-gray-200'>
             <div className='bg-white m-10 p-5'>
             <h1 className='font-bold text-2xl m-5'>Cart Items-{cartItem.length}</h1>
-            <button className='shadow-lg text-red-600 border border-red-600 p-3 mx-5 hover:bg-red-600 hover:text-white' onClick={()=>{
+            <button className='shadow-lg text-red-600 border border-red-600 p-3 mx-5 hover:bg-red-600 hover:text-white max-sm:w-full max-sm:mx-1' onClick={()=>{
                 handleClearCart();
             }}>Clear Cart</button>
-            <div className=''>
+            <div className='max-sm:p-12'>
             <div className='flex flex-wrap flex-row '>
                 {cartItem.map((food)=>(
                     <MenuCard key={food.id} {...food}/> 

@@ -51,11 +51,14 @@ export const MenuCard=(props)=>{
   }
 
   return(
-    <div className="w-52 h-72 m-2 p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-64">
+    <div 
+    className="w-52 h-72 border m-2 p-3 shadow-2xl hover:border-[#a3a1a1] hover:shadow-none hover:border max-sm:w-[200px] max-sm:h-auto">
     <Data {...props} />
     <div className="flex justify-evenly flex-col">
-    <button className="shadow-lg text-[#60b246] border border-[#60b246] p-1  w-full m-1 hover:bg-[#60b246] hover:text-white" onClick={()=> handleAdd(props)}>Add </button>
-    <button className="shadow-lg text-red-600 border border-red-600 p-1  w-full m-1 hover:bg-red-600 hover:text-white" onClick={()=> handleRemove(props)}>Remove </button>
+    <button 
+    className="shadow-lg text-[#60b246] border border-[#60b246] p-1  w-full m-1 hover:bg-[#60b246] hover:text-white" onClick={()=> handleAdd(props)}>Add </button>
+    <button 
+    className="shadow-lg text-red-600 border border-red-600 p-1  w-full m-1 hover:bg-red-600 hover:text-white" onClick={()=> handleRemove(props)}>Remove </button>
     </div>
     </div>
   )

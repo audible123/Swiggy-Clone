@@ -6,7 +6,8 @@ import { Link, Outlet } from 'react-router-dom'
 
 function Map({isVisible,setIsVisible}){
     return(
-        <div className='m-10 max-sm:col-span-3'>
+        <div 
+        className='m-10 max-sm:col-span-3'>
             {isVisible ? <button className=' h-14 w-full bg-[#fc8019] text-white' onClick={()=>{
             setIsVisible(false)
         }}>Select your address    

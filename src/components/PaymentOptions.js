@@ -1,13 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import store from "../utils/Store";
+
+
+// console.log({price});
 
 export function UPI (){
+    const price = useSelector((store)=>store.price.totalprice);
     return (
         <div>
-            <h1>Pay via New VPA</h1>
-            <h1>You must have a Virtual Payment Address</h1>
-            <input type="text" placeholder="Enter VPA"/>
-            <button className="bg-green-500 text-white p-2 w-full">Pay{}</button>
+            <h1 className="font-bold mx-7"
+            >Pay via New VPA</h1>
+            <h1 className="mx-7"
+            >You must have a Virtual Payment Address</h1>
+            <input 
+            className="border border-gray-500 w-[70%] mx-7 text-center" type="text" 
+            placeholder="Enter VPA "/>
+            <button 
+            className="bg-green-500 text-white p-2 w-[70%] mx-7 my-3">Pay-{price}</button>
         </div>
     )
 }
@@ -20,17 +31,19 @@ export function Wallet(){
                 <img 
                 className="h-6 " src="https://play-lh.googleusercontent.com/6_Qan3RBgpJUj0C2ct4l0rKKVdiJgF6vy0ctfWyQ7aN0lBjs78M-1cQUONQSVeo2jfs" alt="" />
                 <h1>Paytm</h1>
-                <Link><h1 className="text-orange-400">Link Account</h1></Link>   
+                <Link to="https://paytm.com/">
+                    <h1 className="text-orange-400">Link Account</h1></Link>   
             </div>
             <div className="border border-gray-200 m-3">
-                <img className="h-6 " src="https://play-lh.googleusercontent.com/6iyA2zVz5PyyMjK5SIxdUhrb7oh9cYVXJ93q6DZkmx07Er1o90PXYeo6mzL4VC2Gj9s" alt="" />
+                <img 
+                className="h-6 " src="https://play-lh.googleusercontent.com/6iyA2zVz5PyyMjK5SIxdUhrb7oh9cYVXJ93q6DZkmx07Er1o90PXYeo6mzL4VC2Gj9s" alt="" />
                 <h1>PhonePe</h1>
-                <Link><h1 className="text-orange-400">Link Account</h1></Link>   
+                <Link to="https://www.phonepe.com/"><h1 className="text-orange-400">Link Account</h1></Link>   
             </div>
             <div  className="border border-gray-200 m-3">
                 <img className="h-6 " src="https://pbs.twimg.com/profile_images/1357660674034307072/joI-ag9h_400x400.jpg" alt="" />
                 <h1>Gpay</h1>
-                <Link><h1 className="text-orange-400">Link Account</h1></Link>   
+                <Link to="https://pay.google.com/about/"><h1 className="text-orange-400">Link Account</h1></Link>   
             </div>
             
             
@@ -42,7 +55,7 @@ export function Wallet(){
 export function Sodexo(){
     return (
         <div>
-            <h1>Add new food card</h1>
+            <h1 className="font-bold mx-7">Add new food card</h1>
             <h1>We Accept Sudexo</h1>
             <div>
                 <input className="border border-gray-500 " type="text" placeholder="Card number"/>
@@ -72,16 +85,27 @@ export function NetBanking(){
 }
 
 export function Credit(){
+
+    const price = useSelector((store)=>store.price.totalprice);
+
     return (
         <div>
-            <h1>Add new card</h1>
+            <h1 className="font-bold mx-7">Add new card</h1>
             <div>
-                <input className="border border-gray-500 " type="text" placeholder="Card number"/>
-                <input className="border border-gray-500 " type="text" placeholder="Valid Through"/>
-                <input className="border border-gray-500 " type="text" placeholder="CVV"/>
-                <input className="border border-gray-500 " type="text" placeholder="Name on Card"/>
+                <input 
+                className="border border-gray-500 w-[70%] mx-7 my-3" type="text" 
+                placeholder="Card number"/>
+                <input 
+                className="border border-gray-500 w-[70%] mx-7 my-3" type="text" 
+                placeholder="Valid Through"/>
+                <input 
+                className="border border-gray-500 w-[70%] mx-7 my-3" type="text" 
+                placeholder="CVV"/>
+                <input 
+                className="border border-gray-500 w-[70%] mx-7 my-3" type="text" 
+                placeholder="Name on Card"/>
             </div>
-            <button className="bg-green-500 text-white p-2 w-full">Pay{}</button>
+            <button className="bg-green-500 text-white p-2 w-[70%] mx-7 my-3">Pay {price}</button>
         </div>
     )
 }
