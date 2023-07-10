@@ -1,24 +1,23 @@
 import { useState } from "react";
 import React  from "react";
-
 const Section = ({ title, details }) => {
 
      const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div className="shadow-2xl border-2 my-5 p-3">
-      <h1 className="text-xl font-bold">{title}</h1>
+    <div className="shadow-2xl border-2 my-5 p-3 relative right-0">
+      <h1 className="text-xl font-bold"> {title}</h1>
 
       {isVisible ? (
         <button
-          className="bg-gradient-to-r from-blue-900 to-black text-white p-1 my-2 rounded-xl"
+          className=" p-1 my-1.5 rounded-xl absolute right-2"
           onClick={() => setIsVisible(false)}
         >
-          Hide
+          ^
         </button>
       ) : (
-        <button className="bg-gradient-to-r from-blue-900 to-black text-white p-1 my-2 rounded-xl" onClick={() => setIsVisible(true)}>
-          Show
+        <button className=" p-1 my-[-1.7rem] rounded-xl absolute right-5 " onClick={() => setIsVisible(true)}>
+          V
         </button>
       )}
       {isVisible && <p className="">{details}</p>}

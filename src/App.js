@@ -15,6 +15,8 @@ import store from './utils/Store';
 import { Provider } from 'react-redux';
 import MapAndPayment from './components/MapAndPayment';
 import { Credit, NetBanking, UPI, Wallet } from './components/PaymentOptions';
+import SignUp from './components/SignUp';
+import LoginForm from './components/LoginForm';
 
 // import Instamart from './components/Instamart'; this is normal import
 
@@ -67,6 +69,14 @@ const appRouter = createBrowserRouter([
       {
         path:"/faq",
         element:<Faq/>,
+      },
+      {
+        path:"/signup",
+        element:<SignUp/>,
+      },
+      {
+        path:"/login",
+        element:<LoginForm/>,
       },
       {
         path:"/restaurant/:restaurantId",

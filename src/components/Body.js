@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
 import {fiterData} from "../utils/helper"
+import Cararoul from "./Cararoul";
 
 
 const FoodBody=()=>{
@@ -54,6 +55,7 @@ const FoodBody=()=>{
   //  .length lagana tha  
   return allRestaurant?.length ===0 ?(<Shimmer/>):(
     <>
+    <Cararoul/>
     <div className=" flex text-center p-5 my-5 justify-center items-center">
       <input className="w-[430px] shadow-xl p-1" type="text" placeholder="Search" value={searchText} onChange={
         (e)=>{

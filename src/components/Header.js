@@ -21,13 +21,31 @@ import { FoodieTitle } from '../utils/helper';
       <FoodieTitle/>
       <div className='right flex items-center'>
       <ul className="nav-list flex">
-        <Link className="px-10 text-black font-semibold hover:text-[#fc8019]" to="/"><li>Home</li></Link>
-        <Link className="pr-10 text-black font-semibold hover:text-[#fc8019]" to="/about"><li>About</li></Link>
-        <Link className="pr-10 text-black font-semibold hover:text-[#fc8019]" to="/faq"><li>FAQs</li></Link>
-        <Link className="pr-10 text-black font-semibold hover:text-[#fc8019]" to="/cart"><li>Cart - {cartItem.length}</li></Link>
-        <Link className="pr-10 text-black font-semibold hover:text-[#fc8019]" to="/instamart"><li>Instamart</li></Link>
+
+        <Link 
+        className="px-10 text-black font-semibold hover:text-[#fc8019]" 
+        to="/"><li>Home</li></Link>
+
+        <Link 
+        className="pr-10 text-black font-semibold hover:text-[#fc8019]" 
+        to="/about"><li>About</li></Link>
+
+        <Link 
+        className="pr-10 text-black font-semibold hover:text-[#fc8019]" 
+        to="/faq"><li>FAQs</li></Link>
+
+        <Link 
+        className="pr-10 text-black font-semibold hover:text-[#fc8019]" 
+        to="/cart"><li>Cart - {cartItem.length}</li></Link>
+
+        <Link 
+        className="pr-10 text-black font-semibold hover:text-[#fc8019]" to="/instamart"><li>Instamart</li></Link>
+
+        <Link 
+        to="login"
+        className="pr-10 text-black font-semibold hover:text-[#fc8019]"><li>Sign In</li></Link>
       </ul>
-      <div className='pr-10 mb-4 text-lg flex flex-col '>
+      {/* <div className='pr-10 mb-4 text-lg flex flex-col '>
       {
         isLoggedIn ? (
           <button className='text-black font-semibold hover:text-[#fc8019]' onClick={()=>setIsLoggedLn(false)}><i class="fa-regular fa-user-large-slash"></i></button>
@@ -36,7 +54,7 @@ import { FoodieTitle } from '../utils/helper';
             )
           }
           <span className='text-black font-semibold hover:text-[#fc8019] text-xs max-sm:'>{user.name}</span>
-      </div>
+      </div> */}
           </div>
      
       </header>

@@ -1,58 +1,76 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React,{ useState } from "react";
+import { auth } from "./firebase";
+import { Link } from "react-router-dom"
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-const LoginForm = () => {
-  const initialValues = {
-    email: '',
-    password: '',
-  };
 
-  const validateForm = (values) => {
-    const errors = {};
 
-    if (!values.email) {
-      errors.email = 'Email is required';
-    }
+const LoginForm =()=> {
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [error,setError] = useState("");
 
-    if (!values.password) {
-      errors.password = 'Password is required';
-    }
-
-    return errors;
-  };
-
-  const handleSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 500);
-  };
+  const handleSubmit =(e)=> {
+    e.preventDefault();
+    setError('');
+    signInWithEmailAndPassword(auth,email,password)
+    .then((userCredential)=>{
+      const loginUser = userCredential.user;
+    })
+    .catch((err) => {
+      setError(err.message);
+    })
+    setEmail('')
+    setPassword('')
+  }
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validate={validateForm}
-      onSubmit={handleSubmit}
-    >
-      {({ isSubmitting }) => (
-        <Form>
-          <div>
-            <label htmlFor="email">Email</label>
-            <Field type="email" id="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <Field type="password" id="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-          </div>
-          <button type="submit" disabled={isSubmitting}>
-            Submit
-          </button>
-        </Form>
-      )}
-    </Formik>
-  );
-};
+    <div 
+    className='page flex justify-center items-center h-[100vh]'>
+        <div 
+        className='auth shadow-2xl h-auto bg-white'>
+            <h1 className="font-bold text-2xl">Login</h1>
+            {error && <div className="auth__error">{error}</div>}
 
-export default LoginForm;
+            <div className="mt-16">
+            <form
+            onSubmit={handleSubmit} name='Login Form'>
+                <input
+                type="email"
+                value={email}
+                placeholder="Enter your Email"
+                required
+                className="shadow-xl"
+                onChange={(e)=> setEmail(e.target.value)}
+                />
+
+                <input
+                type="password"
+                value={password}
+                placeholder="enter your password"
+                className="shadow-xl"
+                onChange={(e)=> setPassword(e.target.value)}/>
+
+                <button 
+                className="bg-[#cd9042]"
+                type='submit'>
+                    Login</button>
+            </form>
+            </div>
+
+            <span 
+            className="text-xs"
+            >
+                Don't Have An Account?
+                <Link
+                to="/signup"
+                className="text-[#cd9042]">
+                SignUp</Link>
+            </span>
+
+        </div>
+    </div>
+  )
+}
+
+export default LoginForm
