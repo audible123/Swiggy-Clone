@@ -28,10 +28,6 @@ import { FoodieTitle } from '../utils/helper';
 
         <Link 
         className="pr-10 text-black font-semibold hover:text-[#fc8019]" 
-        to="/about"><li>About</li></Link>
-
-        <Link 
-        className="pr-10 text-black font-semibold hover:text-[#fc8019]" 
         to="/faq"><li>FAQs</li></Link>
 
         <Link 

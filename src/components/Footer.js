@@ -1,5 +1,6 @@
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 
 const FoodFooter =()=>{
@@ -19,10 +20,20 @@ const FoodFooter =()=>{
       <div className="ml-10">
         <h1 className="font-bold text-gray-400">COMPANY</h1>
         <ul >
-          <li>Swiggy Instamart</li>
-          <li>Swiggy Blog</li>
-          <li>About us</li>
-          <li>Swiggy Genie</li>
+          <Link 
+          to="/instamart"
+          ><li>Swiggy Instamart</li></Link>
+
+          <Link
+          to="https://blog.swiggy.com/"><li>Swiggy Blog</li></Link>
+
+          <Link
+          to="/about"
+          ><li>About us</li></Link>
+          
+          <Link 
+          to="https://www.swiggy.com/swiggy-genie"><li>Swiggy Genie</li></Link>
+          
         </ul>
       </div>
 

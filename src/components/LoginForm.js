@@ -52,7 +52,7 @@ const LoginForm =()=> {
                 onChange={(e)=> setPassword(e.target.value)}/>
 
                 <button 
-                className="bg-[#cd9042]"
+                className="bg-[#fc8019] text-white"
                 type='submit'>
                     Login</button>
             </form>
@@ -64,7 +64,7 @@ const LoginForm =()=> {
                 Don't Have An Account?
                 <Link
                 to="/signup"
-                className="text-[#cd9042]">
+                className="text-[#fc8019]">
                 SignUp</Link>
             </span>
 

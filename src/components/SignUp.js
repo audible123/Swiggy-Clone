@@ -74,7 +74,7 @@ function SignUp() {
           onChange={e => setConfirmPassword(e.target.value)}/>
 
         <button type='submit'
-        className="bg-[#cd9042]">Register</button>
+        className="bg-[#fc8019] text-white">Register</button>
       </form>
       </div>
 
@@ -82,7 +82,7 @@ function SignUp() {
       <span className="text-xs">
         Already have an account?  
         <Link 
-        className="text-[#cd9042]"
+        className="text-[#fc8019]"
         to='/login'>login</Link>
       </span>
     </div>
